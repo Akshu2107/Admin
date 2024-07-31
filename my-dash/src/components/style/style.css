@@ -1,0 +1,23 @@
+/* // Sidebardash.module.css */
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #2e2e2e;
+    color: #b6c8d9;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.menu-item.active {
+    background-color: red;
+    color: #b6c8d9;
+}
+
+.maindash {
+    margin-top: 50px;
+}
