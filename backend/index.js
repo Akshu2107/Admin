@@ -20,6 +20,9 @@ connectToMongoDB();
 
 
 //route
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 app.use("/user", Router);
 
 app.use("/order", orderRouter)
