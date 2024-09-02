@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 function Order() {
+    // const url = "http://localhost:8000"
+    const url = "https://admin-dashboard-project4.onrender.com"
     const [orders, setOrder] = useState([]);
 
     const getOrder = async (e) => {
-        const response = await fetch("http://localhost:8000/order", { method: "GET" })
+        const response = await fetch(`${url}/order`, { method: "GET" })
         const data = await response.json()
         setOrder(data);
         // console.log(data);
@@ -16,7 +18,7 @@ function Order() {
     }, [orders]);
 
     const handleDelete = async (id) => {
-        const data = await fetch("http://localhost:8000/order/" + id, { method: "delete" })
+        const data = await fetch(`${url}/order/` + id, { method: "delete" })
         console.log(data);
         // console.log(id);
     };
@@ -36,7 +38,7 @@ function Order() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const respo = await fetch("http://localhost:8000/order/addorder", {
+        const respo = await fetch(`${url}/order/addorder`, {
             method: "POST",
             body: JSON.stringify(form),
             headers: {
